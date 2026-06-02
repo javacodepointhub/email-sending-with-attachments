@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Email Sending Service</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Quill Editor -->
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="card shadow-lg">
+
+        <div class="card-header">
+
+            <h3 class="mb-0">
+                Email Sending With Attachments
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div id="alertContainer"></div>
+
+            <form id="emailForm">
+
+                <!-- TO -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        To
+                    </label>
+
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="to"
+                            name="to"
+                            placeholder="abc@gmail.com, xyz@gmail.com"
+                            required>
+
+                </div>
+
+                <!-- CC -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        CC
+                    </label>
+
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="cc"
+                            name="cc"
+                            placeholder="manager@gmail.com">
+
+                </div>
+
+                <!-- BCC -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        BCC
+                    </label>
+
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="bcc"
+                            name="bcc"
+                            placeholder="audit@gmail.com">
+
+                </div>
+
+                <!-- SUBJECT -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Subject
+                    </label>
+
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="subject"
+                            name="subject"
+                            required>
+
+                </div>
+
+                <!-- BODY -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Email Body
+                    </label>
+
+                    <div id="editor"></div>
+
+                    <input
+                            type="hidden"
+                            id="body"
+                            name="body">
+
+                </div>
+
+                <!-- ATTACHMENTS -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Attachments
+                    </label>
+
+                    <input
+                            type="file"
+                            id="attachments"
+                            name="attachments"
+                            class="form-control"
+                            multiple>
+
+                    <small class="text-muted">
+                        Allowed:
+                        pdf, doc, docx, xls, xlsx,
+                        csv, txt, png, jpg, jpeg
+                    </small>
+
+                </div>
+
+                <!-- SEND BUTTON -->
+
+                <button
+                        type="submit"
+                        id="sendButton"
+                        class="btn btn-primary">
+
+                    Send Email
+
+                </button>
+
+                <!-- LOADER -->
+
+                <div id="loader"
+                     class="spinner-border text-primary ms-3 d-none"
+                     role="status">
+
+                    <span class="visually-hidden">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Quill -->
+
+<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+
+<script src="/js/app.js"></script>
+
+</body>
+
+</html>
